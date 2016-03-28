@@ -11,13 +11,37 @@
     tools:context="me.chunyu.spike.wcl_rxandroid_threads_demo.MainActivity">
 
     <RelativeLayout
-        android:id="@+id/main_rl_default_container"
+        android:id="@+id/main_rl_core_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="HardcodedText">
 
         <TextView
-            android:id="@+id/main_tv_default_title"
+            android:id="@+id/main_tv_core_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="CPU核数: "/>
+
+        <TextView
+            android:id="@+id/main_tv_core_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/main_tv_core_text"
+            android:layout_toRightOf="@+id/main_tv_core_text"
+            tools:text="8核"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_rl_compute_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_rl_core_container"
+        tools:ignore="HardcodedText">
+
+        <TextView
+            android:id="@+id/main_tv_compute_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -28,12 +52,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/main_tv_default_title"
-            android:layout_toRightOf="@+id/main_tv_default_title"
+            android:layout_toEndOf="@+id/main_tv_compute_title"
+            android:layout_toRightOf="@+id/main_tv_compute_title"
             tools:text="100毫秒"/>
 
         <Button
-            android:id="@+id/main_b_default"
+            android:id="@+id/main_b_compute"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -43,17 +67,18 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/main_rl_custom_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/main_rl_default_container"
-        tools:ignore="HardcodedText">
+        android:layout_below="@+id/main_rl_compute_container">
 
         <TextView
             android:id="@+id/main_tv_custom_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="定制线程: "/>
+            android:text="Custom线程: "
+            tools:ignore="HardcodedText"/>
 
         <TextView
             android:id="@+id/main_tv_custom_value"
@@ -62,6 +87,7 @@
             android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/main_tv_custom_title"
             android:layout_toRightOf="@+id/main_tv_custom_title"
+            tools:ignore="HardcodedText"
             tools:text="100毫秒"/>
 
         <Button
@@ -70,6 +96,39 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:onClick="customPara"
+            android:text="开始"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_rl_grouped_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_rl_custom_container"
+        tools:ignore="HardcodedText">
+
+        <TextView
+            android:id="@+id/main_tv_grouped_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Grouped改进: "/>
+
+        <TextView
+            android:id="@+id/main_tv_grouped_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/main_tv_grouped_title"
+            android:layout_toRightOf="@+id/main_tv_grouped_title"
+            tools:text="100毫秒"/>
+
+        <Button
+            android:id="@+id/main_b_grouped"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:onClick="groupedPara"
             android:text="开始"/>
     </RelativeLayout>
 
