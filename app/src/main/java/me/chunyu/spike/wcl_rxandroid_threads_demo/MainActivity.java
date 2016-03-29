@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int MIN = 1;
     private static final int MAX = 1000;
+    
     private static final Random rand = new Random();
 
     @Bind(R.id.main_tv_compute_value) TextView mTvComputeValue; // 计算线程时间
